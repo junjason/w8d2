@@ -40,3 +40,19 @@ Array.prototype.twoSum = function() {
 // console.log(arr);
 // console.log(sums);
 
+Array.prototype.transpose = function() {
+    let transposed = [];
+    for(let i = 0; i < this.length; i++) {
+        let row = [];
+        for(let j = 0; j < this.length; j++) {
+            row.push(this[j][i]);
+        }
+        transposed.push(row);
+    }
+    return transposed;
+};
+
+const arr = [[0, 1, 2], [3, 4, 5], [6, 7, 8]];
+const transposed = arr.transpose();
+console.log(arr);
+console.log(transposed);
