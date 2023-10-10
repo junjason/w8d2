@@ -9,8 +9,8 @@ function range(start, end) {
 }
   
 // Example usage:
-const result = range(2, 7);
-console.log(result); // Output: [1, 2, 3, 4, 5]
+// const result = range(2, 7);
+// console.log(result); // Output: [1, 2, 3, 4, 5]
 
 
 function sumRec(arr) {
@@ -47,3 +47,25 @@ function fibonacci(n) {
 // console.log(result);
 
 // function deepDup
+
+function deepDup(arr) {
+    if (Array.isArray(arr)) {
+      // If the input is an array, create a new array to hold the copied elements.
+      const copy = [];
+      for (const element of arr) {
+        copy.push(deepDup(element)); // Recursively copy each element.
+      }
+      return copy;
+    } else {
+      // If the input is not an array (e.g., it's a primitive value), return it as is.
+      return arr;
+    }
+  }
+  
+  // Example usage:
+  const originalArray = [1, 2, [3, 4, [5, 6]]];
+  const duplicatedArray = deepDup(originalArray);
+  
+  console.log(originalArray); // Original array
+  console.log(duplicatedArray); // Deep copy of the original array
+  
