@@ -1,15 +1,16 @@
-function range(start, end, result =[]) {
+function range(start, end) {
     // Base case: If start is greater than end, return an empty array.
     if (start > end) {
-      return result;
+      return [];
     }
+    let result = [];
     result.push(start);
-    return range(start + 1, end, result);
+    return result.concat(range(start + 1, end));
 }
   
-  // Example usage:
-// const result = range(2, 7);
-// console.log(result); // Output: [1, 2, 3, 4, 5]
+// Example usage:
+const result = range(2, 7);
+console.log(result); // Output: [1, 2, 3, 4, 5]
 
 
 function sumRec(arr) {
@@ -42,7 +43,7 @@ function fibonacci(n) {
     mem.push(mem[mem.length-1] + mem[mem.length-2]);
     return mem;
 }
-const result = fibonacci(6);
-console.log(result);
+// const result = fibonacci(6);
+// console.log(result);
 
-function deepDup
+// function deepDup
