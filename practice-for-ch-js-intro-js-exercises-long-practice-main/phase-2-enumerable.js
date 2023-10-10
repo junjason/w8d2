@@ -12,10 +12,17 @@ Array.prototype.myEach = function(callback) {
 // arr.myEach(print);
 
 Array.prototype.myMap = function(callback) {
+    // let mapped = [];
+    // for(let i = 0; i < this.length; i++) {
+    //     mapped.push(callback(this[i]));
+    // }
+    // return mapped;
+
+    //myEach version
     let mapped = [];
-    for(let i = 0; i < this.length; i++) {
-        mapped.push(callback(this[i]));
-    }
+    this.myEach(function(element) {
+        mapped.push(callback(element));
+    });
     return mapped;
 };
 
@@ -27,14 +34,28 @@ Array.prototype.myMap = function(callback) {
 // console.log(doubled);
 
 Array.prototype.myReduce = function(callback, initialValue) {
+//     let i = 0;
+//     if (!initialValue) {
+//         initialValue = this[0];
+//         i++;
+//     }
+//     let acc = initialValue;
+//     for (; i < this.length; i++) {
+//         acc = callback(acc, this[i]);
+//     }
+//     return acc;
+
     let i = 0;
     if (!initialValue) {
         initialValue = this[0];
-        i++;
+        i = 1;
     }
     let acc = initialValue;
-    for (; i < this.length; i++) {
-        acc = callback(acc, this[i]);
+    this.myEach(function(element) {
+        acc = callback(acc, element);
+    });
+    if (i == 1) {
+        acc -= initialValue;
     }
     return acc;
 }
