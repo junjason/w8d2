@@ -20,3 +20,22 @@ let arr = [5,4,3,2,1];
 console.log(arr);
 arr.bubbleSort();
 console.log(arr);
+
+String.prototype.substrings = function() {
+    const result = [];
+    const str = this;
+  
+    for (let i = 0; i < str.length; i++) {
+      for (let j = i + 1; j < str.length+1; j++) {
+        result.push(str.slice(i, j));
+      }
+    }
+  
+    return result;
+  };
+  
+  // Example usage:
+  const inputString = "hello";
+  const substringArray = inputString.substrings();
+  console.log(substringArray);
+  
