@@ -27,5 +27,23 @@ Array.prototype.myMap = function(callback) {
 // console.log(doubled);
 
 Array.prototype.myReduce = function(callback, initialValue) {
-
+    let i = 0;
+    if (!initialValue) {
+        initialValue = this[0];
+        i++;
+    }
+    let acc = initialValue;
+    for (; i < this.length; i++) {
+        acc = callback(acc, this[i]);
+    }
+    return acc;
 }
+
+let arr = [1,2,3];
+function add(num1, num2) {
+    return num1+num2;
+}
+let result = arr.myReduce(add);
+let result2 = arr.myReduce(add, 25);
+console.log(result);
+console.log(result2);
