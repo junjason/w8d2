@@ -83,15 +83,23 @@ function bsearch(arr, target) {
     }
     else {
         const result = bsearch(arr.slice(mid+1), target);
-        if (!result) {return -1;}
+        // debugger
+        if (result === -1) {return -1;}
         else {return mid + 1 + result;}
     }
 }
   
-arr = [0,1,2,3,4,5,6,8,9];
-index = bsearch(arr, 2);
-index2 = bsearch(arr, 9);
-index3 = bsearch(arr, 7);
-console.log(index);
-console.log(index2);
-console.log(index3);
+// let arr = [0,1,2,3,4,5,6,8,9];
+// let index = bsearch(arr, 3);
+// let index2 = bsearch(arr, 9);
+// let index3 = bsearch(arr, 7);
+// console.log(index);
+// console.log(index2);
+// console.log(index3);
+
+function mergesort(arr) {
+    
+
+
+
+}
