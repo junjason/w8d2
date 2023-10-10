@@ -34,10 +34,10 @@ function exponent(base, exp) {
 
 function fibonacci(n) {
     if (n === 1) {
-        return [1];
+        return [0];
     }
     if (n === 2) {
-        return [1,1]
+        return [0,1];
     }
     mem = fibonacci(n-1);
     mem.push(mem[mem.length-1] + mem[mem.length-2]);
@@ -62,10 +62,36 @@ function deepDup(arr) {
     }
   }
   
-  // Example usage:
-  const originalArray = [1, 2, [3, 4, [5, 6]]];
-  const duplicatedArray = deepDup(originalArray);
+//   // Example usage:
+//   const originalArray = [1, 2, [3, 4, [5, 6]]];
+//   const duplicatedArray = deepDup(originalArray);
   
-  console.log(originalArray); // Original array
-  console.log(duplicatedArray); // Deep copy of the original array
+//   console.log(originalArray); // Original array
+//   console.log(duplicatedArray); // Deep copy of the original array
+
+function bsearch(arr, target) {
+    if (arr.length === 0) {
+        return -1;
+    }
+
+    const mid = Math.floor(arr.length / 2);
+    if (arr[mid] === target) {
+        return mid;
+    } 
+    else if (target < arr[mid]) {
+        return bsearch(arr.slice(0, mid), target);
+    }
+    else {
+        const result = bsearch(arr.slice(mid+1), target);
+        if (!result) {return -1;}
+        else {return mid + 1 + result;}
+    }
+}
   
+arr = [0,1,2,3,4,5,6,8,9];
+index = bsearch(arr, 2);
+index2 = bsearch(arr, 9);
+index3 = bsearch(arr, 7);
+console.log(index);
+console.log(index2);
+console.log(index3);

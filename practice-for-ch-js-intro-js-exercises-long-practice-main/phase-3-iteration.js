@@ -16,7 +16,7 @@ Array.prototype.bubbleSort = function() {
     }
 };
 
-let arr = [5,4,3,2,1];
+let arr = [5,2,3,4,1,];
 console.log(arr);
 arr.bubbleSort();
 console.log(arr);
@@ -34,8 +34,8 @@ String.prototype.substrings = function() {
     return result;
   };
   
-  // Example usage:
-  const inputString = "hello";
-  const substringArray = inputString.substrings();
-  console.log(substringArray);
+  // // Example usage:
+  // const inputString = "hello";
+  // const substringArray = inputString.substrings();
+  // console.log(substringArray);
   
